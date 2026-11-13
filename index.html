@@ -2,23 +2,707 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projeto em Validação | Grupo Libra Consórcios</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#281a20">
+<meta name="color-scheme" content="light">
+<meta property="og:image" content="paulabelfort.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paula Belfort | Consultoria em Consórcios">
+<meta name="twitter:description" content="Planejamento claro e atendimento próximo para sua próxima conquista.">
+<title>Paula Belfort | Consultora de Vendas de Consórcio</title>
+<meta name="description" content="Paula Belfort, consultora especializada em consórcios. Atendimento personalizado, transparente e seguro. Faça sua simulação.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Paula Belfort | Consultora de Vendas">
+<meta property="og:description" content="Planejamento, transparência e segurança para conquistar seu veículo ou imóvel por meio do consórcio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body{font-family:"Manrope",sans-serif;background:#0e1f33;color:#fff;display:grid;place-content:center;min-height:100vh;margin:0;text-align:center;padding:1.5rem}
-  .card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.15);padding:2.5rem;border-radius:16px;max-width:480px;box-shadow:0 20px 40px rgba(0,0,0,0.4)}
-  h1{font-size:1.5rem;margin-bottom:0.8rem;color:#ffb785}
-  p{color:#cfd8e3;font-size:0.98rem;line-height:1.6;margin-bottom:1.5rem}
-  .status{display:inline-block;padding:0.5rem 1rem;background:#c4601a;color:#fff;border-radius:999px;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em}
+:root{
+  --ink:#3d232b;
+  --ink2:#4a2e35;
+  --rosa-principal:#d9777f;
+  --rosa-hover:#c4646d;
+  --rosa-claro:#faedee;
+  --rosa-suave:#f4d6d8;
+  --papel:#fcf8f8;
+  --texto:#2b1d21;
+  --muda:#6b5358;
+  --linha:#ead5d7;
+  --foto:url("paulabelfort.jpeg");
+  --apresentacao:url("apresentacao.jpeg");
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Manrope","Segoe UI",Roboto,sans-serif;
+  color-scheme:light
+}
+*,*::before,*::after{box-sizing:border-box}*{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{font:500 1.0625rem/1.65 var(--sans);color:var(--texto);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--rosa-principal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(100% - 2.4rem,1120px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,1.3rem + 2.8vw,3rem);margin-bottom:.6rem;text-wrap:balance}
+p{text-wrap:pretty}
+.eyebrow{display:inline-block;font:800 .78rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--rosa-principal);margin-bottom:.8rem}
+.lead{color:var(--muda);max-width:58ch;margin-bottom:2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.85rem 1.6rem;border:0;border-radius:10px;background:var(--rosa-principal);color:#fff;font:700 1rem var(--sans);text-decoration:none;cursor:pointer;transition:background .2s,transform .15s;-webkit-tap-highlight-color:transparent}
+.btn:hover{background:var(--rosa-hover)}.btn:active{transform:scale(.98)}
+.btn.sec{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.8)}.btn.sec:hover{background:rgba(255,255,255,.22)}
+.btn.peq{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+
+header{position:sticky;top:0;z-index:50;background:rgba(61,35,43,.95);color:#fff;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+.marca{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.marca svg{width:34px;height:34px;color:#fff}
+.marca b{display:block;font:700 1.15rem/1.05 var(--serif)}.marca small{display:block;font-size:.68rem;letter-spacing:.14em;color:#f2c6c9;font-weight:700;text-transform:uppercase}
+.nav{display:flex;gap:1.6rem;align-items:center}.nav a{text-decoration:none;font-weight:600;font-size:.95rem}.nav a:not(.btn):hover{color:#fce4e5}
+.nav a:not(.btn){display:none}
+@media(min-width:900px){.nav a:not(.btn){display:inline}}
+
+/* TOPO COM A FOTO DE FUNDO */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;min-height:min(92svh,820px);display:flex;align-items:flex-end}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--foto);
+  background-position:center 32%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  z-index:0
+}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(61,35,43,.4) 0%,rgba(61,35,43,0) 28%,rgba(61,35,43,.85) 62%,var(--ink) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:7rem 0 2.6rem}
+.hero h1{font-size:clamp(2.8rem,1.2rem + 7vw,5.4rem);line-height:1;margin-bottom:.5rem;text-wrap:balance}
+.cargo{font:800 .85rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#f4c2c6;margin-bottom:1rem}
+.hero p.sub{font-size:1.15rem;color:#f4e6e8;max-width:44ch;margin-bottom:1.6rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.6rem}
+.ofertas{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.7rem}
+.ofertas span{padding:.45rem .9rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-weight:700;font-size:.88rem;background:rgba(61,35,43,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.ofertas b{color:#f4c2c6}
+.nota{font-size:.8rem;color:#d8b3b7}
+@media(min-width:900px){
+  .hero{min-height:min(88svh,780px)}
+  .hero::before{
+    left:30%;
+    background-position:center 38%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%);
+    mask-image:linear-gradient(90deg,transparent 0,#000 38%)
+  }
+  .hero::after{background:linear-gradient(0deg,var(--ink) 0,rgba(61,35,43,0) 28%)}
+  .hero .wrap{padding:8rem 0 3.2rem}
+  .hero .txt{max-width:560px}
+}
+
+/* FAIXA DE CREDIBILIDADE */
+.faixa{background:var(--ink);color:#fff;border-top:1px solid rgba(255,255,255,.1)}
+.faixa ul{list-style:none;display:grid;gap:.9rem;padding:1.4rem 0}
+@media(min-width:760px){.faixa ul{grid-template-columns:repeat(4,1fr)}}
+.faixa li{display:flex;gap:.7rem;align-items:center;font-weight:700;font-size:.92rem;line-height:1.3}
+.faixa svg{flex:none;width:26px;height:26px;color:#f4c2c6;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+section{padding:clamp(3rem,8vw,5.5rem) 0}.papel{background:var(--papel)}
+
+/* SOBRE */
+.cons{display:grid;gap:2.2rem;align-items:center}
+@media(min-width:860px){.cons{grid-template-columns:.85fr 1.15fr;gap:3.4rem}}
+.foto{width:min(400px,100%);margin-inline:auto;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--ink) var(--apresentacao) center top/cover no-repeat;box-shadow:0 24px 48px -28px rgba(61,35,43,.6);position:relative}
+.foto span{position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1.1rem .9rem;background:linear-gradient(0deg,rgba(61,35,43,.92),transparent);color:#fff;font:700 .9rem var(--sans)}
+.cons h2{margin-bottom:.4rem}.cons .cargo2{font:800 .85rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--rosa-principal);margin-bottom:1.2rem}
+.cons p{max-width:56ch;color:var(--muda)}.cons p+p{margin-top:1rem}
+.cons p.destaque{color:var(--texto);font-weight:600}
+.assina{margin-top:1.6rem;padding-left:1rem;border-left:4px solid var(--rosa-principal);font:600 1.3rem/1.3 var(--serif);color:var(--ink)!important}
+
+/* PILARES */
+.pilares{display:grid;gap:1rem;margin-top:3rem}
+@media(min-width:760px){.pilares{grid-template-columns:repeat(3,1fr)}}
+.pilar{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:1.5rem}
+.pilar svg{width:34px;height:34px;color:var(--rosa-principal);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.8rem}
+.pilar h3{font-size:1.35rem;margin-bottom:.3rem}.pilar p{color:var(--muda);font-size:.97rem}
+
+/* SIMULAÇÃO */
+.simbloco{display:grid;gap:2rem;align-items:center}
+@media(min-width:900px){.simbloco{grid-template-columns:1fr 1fr;gap:3.4rem}}
+.simbloco ul{list-style:none;display:grid;gap:.6rem;margin-top:1rem}
+.simbloco li{padding-left:1.7rem;position:relative;font-weight:600}
+.simbloco li::before{content:"";position:absolute;left:0;top:.45em;width:.9rem;height:.5rem;border-left:3px solid var(--rosa-principal);border-bottom:3px solid var(--rosa-principal);transform:rotate(-45deg)}
+.sim{background:#fff;color:var(--texto);border-radius:18px;padding:1.6rem;border:1px solid var(--linha);box-shadow:0 30px 60px -36px rgba(61,35,43,.4)}
+.sim h3{font-size:1.6rem;margin-bottom:.3rem}.sim p{color:var(--muda);font-size:.95rem;margin-bottom:1.1rem}
+.sim label{display:block;font-weight:700;font-size:.9rem;margin-bottom:.9rem}
+.sim input,.sim select{display:block;width:100%;min-height:50px;margin-top:.3rem;padding:.7rem .9rem;font:600 1rem var(--sans);color:var(--texto);background:var(--rosa-claro);border:2px solid transparent;border-radius:10px}
+.sim input:focus,.sim select:focus{outline:0;border-color:var(--rosa-principal)}
+.sim .btn{width:100%}.sim .aviso{min-height:1.3em;color:var(--rosa-hover);font-weight:700;font-size:.9rem;margin-bottom:.6rem}
+.sim h3{margin-bottom:.9rem}
+.prog{height:6px;background:var(--rosa-claro);border-radius:99px;overflow:hidden;margin-bottom:1rem}
+.prog i{display:block;height:100%;width:0;background:var(--rosa-principal);border-radius:99px;transition:width .35s}
+.sim .passo{font:800 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--rosa-hover);margin-bottom:.6rem}
+.sim fieldset{border:0;min-width:0}
+.sim legend{font:600 1.55rem/1.15 var(--serif);color:var(--ink);margin-bottom:.4rem;padding:0}
+.sim .dica{color:var(--muda);font-size:.95rem;margin-bottom:1rem}
+.sim .ops{display:grid;gap:.6rem;margin-bottom:.9rem}
+.sim .op{position:relative;display:block;margin:0;font-weight:700}
+.sim .op input{position:absolute;opacity:0;width:1px;height:1px;min-height:0;margin:0;padding:0}
+.sim .op span{display:flex;align-items:center;gap:.8rem;min-height:58px;padding:.7rem 1rem;border:2px solid var(--linha);border-radius:12px;background:#fff;font-size:1.05rem;cursor:pointer;transition:border-color .2s,background .2s;-webkit-tap-highlight-color:transparent}
+.sim .op span::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;border:2px solid #d4b8bc;background:#fff}
+.sim .op:hover span{border-color:#b59196}
+.sim .op input:checked+span{border-color:var(--rosa-principal);background:var(--rosa-claro)}
+.sim .op input:checked+span::before{border-color:var(--rosa-principal);background:radial-gradient(circle,var(--rosa-principal) 0 45%,#fff 50%)}
+.sim .op input:focus-visible+span{outline:3px solid var(--rosa-principal);outline-offset:2px}
+.sim fieldset>input[type=text]{margin-bottom:.9rem;font-size:1.1rem}
+.sim .navs{display:flex;gap:.6rem}
+.sim .navs .btn{flex:1;width:auto}
+.sim .navs .btn.voltar{flex:0 0 auto;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--linha)}
+.sim .navs .btn.voltar:hover{background:var(--rosa-claro)}
+.btn[hidden]{display:none}
+.resumo h4{font:600 1.55rem/1.15 var(--serif);color:var(--ink);margin-bottom:.4rem}
+.sim .resumo p{margin-bottom:0}
+.resumo dl{display:grid;gap:.1rem;margin:.9rem 0 1.1rem;padding:1rem 1.1rem;background:var(--rosa-claro);border-radius:12px}
+.resumo dt{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muda)}
+.resumo dd{font-weight:700;margin:0 0 .55rem}.resumo dd:last-child{margin:0}
+
+/* COMO FUNCIONA */
+.passos{display:grid;gap:1rem;list-style:none;counter-reset:p}
+@media(min-width:760px){.passos{grid-template-columns:repeat(2,1fr)}}@media(min-width:1000px){.passos{grid-template-columns:repeat(4,1fr)}}
+.passos li{counter-increment:p;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:1.4rem}
+.passos li::before{content:counter(p);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--ink);color:#fff;font:600 1.1rem var(--serif);margin-bottom:.8rem}
+.passos h3{font-size:1.3rem;margin-bottom:.3rem}.passos p{color:var(--muda);font-size:.97rem}
+.custos{margin-top:1.4rem;padding:1.2rem 1.4rem;border-left:4px solid var(--rosa-principal);background:#fff;border-radius:0 12px 12px 0;color:var(--muda)}
+.custos b{color:var(--texto)}
+
+/* PLANOS */
+.abas{display:flex;gap:.4rem;margin:0 0 1.2rem;padding:.35rem;background:var(--rosa-claro);border-radius:14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.abas::-webkit-scrollbar{display:none}
+.abas button{flex:none;min-height:46px;padding:.5rem 1.2rem;border:0;background:transparent;color:var(--muda);border-radius:10px;font:700 .95rem var(--sans);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.abas button:hover{color:var(--ink)}
+.abas button[aria-selected="true"]{background:var(--ink);color:#fff;box-shadow:0 8px 18px -10px rgba(61,35,43,.8)}
+.selos{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.1rem}
+.selos[hidden]{display:none}
+.selos li{padding:.4rem .85rem;border-radius:999px;background:#fff;border:1px solid var(--linha);font-weight:700;font-size:.82rem;color:var(--ink)}
+.selos li:first-child{background:var(--ink);border-color:var(--ink);color:#fff}
+.selos li:not(:first-child)::before{content:"";display:inline-block;width:.55rem;height:.3rem;margin-right:.45rem;border-left:2px solid var(--rosa-principal);border-bottom:2px solid var(--rosa-principal);transform:translateY(-.15em) rotate(-45deg)}
+.tab{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--linha);border-radius:14px;overflow:hidden}
+.tab th,.tab td{padding:.9rem 1.1rem;text-align:left;border-bottom:1px solid var(--linha)}
+.tab th{font-size:.8rem;letter-spacing:.08em;color:var(--muda);background:#fcf5f5}
+.tab tr:last-child td{border-bottom:0}
+.tab td:nth-child(2){font:600 1.35rem var(--serif)}.tab td:last-child{text-align:right}
+.rodape-plano{margin-top:1rem;font-size:.88rem;color:var(--muda);max-width:70ch}
+
+/* GALERIA (c1 a c44) */
+.galeria{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+@media(min-width:760px){.galeria{grid-template-columns:repeat(4,1fr);gap:1rem}}
+.galeria figure[hidden]{display:none}
+.galeria button{all:unset;display:block;position:relative;width:100%;aspect-ratio:4/5;cursor:zoom-in;border-radius:14px;overflow:hidden;background:var(--ink);box-shadow:0 14px 28px -20px rgba(61,35,43,.7);-webkit-tap-highlight-color:transparent}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.galeria button::after{content:"+";position:absolute;right:.6rem;bottom:.6rem;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(61,35,43,.8);color:#fff;font:400 1.4rem/1 var(--serif);opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.galeria button:hover img{transform:scale(1.05)}.galeria button:hover::after,.galeria button:focus-visible::after{opacity:1;transform:none}
+@media(hover:none){.galeria button::after{opacity:.9;transform:none}}
+.galeria button:focus-visible{outline:3px solid var(--rosa-principal);outline-offset:3px}
+.mais-wrap{display:flex;justify-content:center;margin-top:1.8rem}
+.btn.escuro{background:var(--ink)}.btn.escuro:hover{background:var(--ink2)}
+
+/* FAQ */
+.faq{max-width:800px}
+details{border-bottom:1px solid var(--linha)}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.1rem 0;font:700 1.05rem var(--sans);min-height:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 1.7rem var(--serif);color:var(--rosa-principal);transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 1.2rem;color:var(--muda);max-width:64ch}
+
+/* CONTATO E RODAPÉ */
+.contato{background:var(--ink);color:#fff}
+.contato h2{color:#fff}.contato .lead{color:#f2c6c9}
+.cgrid{display:grid;gap:2rem}
+@media(min-width:860px){.cgrid{grid-template-columns:1fr 1fr;align-items:start}}
+.cartao{padding:1.4rem;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.04)}
+.cartao h3{font-size:1.25rem;margin-bottom:.6rem}.cartao p,.cartao a{color:#f2c6c9;font-size:.97rem}.cartao a{display:block;margin-top:.2rem;text-decoration:none;font-weight:700;color:#fff}
+.cartao a:hover{color:#fce4e5}
+footer{background:#26141a;color:#d8b3b7;font-size:.85rem;padding:2rem 0 2.6rem}
+footer .wrap{display:grid;gap:1rem}footer b{color:#fff}footer p{max-width:90ch}
+
+.fab{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:45;display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--rosa-principal);color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.3);transition:transform .3s,opacity .3s}
+.fab svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fab.some{transform:scale(.6);opacity:0;pointer-events:none}
+dialog{margin:auto;padding:0;border:0;border-radius:16px;background:var(--ink);width:min(94vw,520px);max-height:94vh;overflow:hidden;color:#fff}
+dialog::backdrop{background:rgba(20,10,13,.9)}
+dialog img{display:block;width:100%;max-height:74vh;object-fit:contain;background:#000}
+.lb-rod{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem}
+.lb-rod .info{flex:1;min-width:0;font-weight:700;font-size:.92rem;line-height:1.3}
+.lb-rod small{display:block;color:#f2c6c9;font-weight:600}
+dialog button{min-width:44px;min-height:44px;padding:.3rem .8rem;border:0;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;font:600 1.3rem var(--sans);cursor:pointer;transition:background .2s}
+dialog button:hover{background:var(--rosa-principal)}
+.js .rev{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}.js .rev.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rev{transform:none;transition:opacity .01s}*{transition-duration:.01ms!important}}
+
+/* =========================================================
+   REFINAMENTO VISUAL — DIREÇÃO EDITORIAL PREMIUM
+   ========================================================= */
+:root{
+  --ink:#281a20;--ink2:#38232c;--rosa-principal:#b96f78;--rosa-hover:#9f5963;
+  --rosa-claro:#f7eff0;--rosa-suave:#ead1d4;--papel:#fbf8f6;
+  --texto:#292126;--muda:#74676b;--linha:#e9dfe0;
+  --serif:"Fraunces",Georgia,serif;--sans:"Manrope","Segoe UI",sans-serif;
+  --gold:#c5a477;--shadow:0 24px 70px -38px rgba(40,26,32,.32)
+}
+html{scroll-padding-top:6.5rem}
+body{font-size:16px;line-height:1.72;letter-spacing:-.012em}
+.wrap{width:min(100% - 3rem,1180px)}
+section{padding:clamp(4.5rem,8vw,7.5rem) 0}
+h1,h2,h3{letter-spacing:-.035em}
+h2{font-size:clamp(2.25rem,1.4rem + 3vw,3.65rem);line-height:1.04;max-width:17ch}
+.eyebrow{font-size:.69rem;letter-spacing:.2em;color:#a7656d}
+.lead{font-size:1.05rem;line-height:1.8;max-width:62ch;margin-top:.85rem}
+.btn{min-height:54px;padding:.95rem 1.55rem;border-radius:3px;background:var(--rosa-principal);font-size:.86rem;letter-spacing:.035em;border:1px solid var(--gold);box-shadow:0 9px 22px -14px rgba(40,26,32,.65),0 0 0 1px rgba(197,164,119,.16)}
+.btn:hover{background:var(--rosa-hover);transform:translateY(-2px)}
+.btn:focus-visible{outline-offset:4px}
+.btn.sec{background:transparent;border:1px solid var(--gold);box-shadow:0 0 0 1px rgba(197,164,119,.12)}
+.btn.sec:hover{background:rgba(255,255,255,.1)}
+.btn.peq{min-height:42px;padding:.6rem .95rem;font-size:.78rem}
+header{background:rgba(40,26,32,.96);border-bottom:1px solid rgba(255,255,255,.09);box-shadow:0 8px 28px -22px #000}
+.barra{min-height:78px;padding:.65rem 0}
+.marca{gap:.9rem}
+.marca::before{content:"PB";display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(255,255,255,.42);border-radius:50%;font:600 1rem var(--serif);letter-spacing:.03em;color:#f1dadd}
+.marca b{font-size:1.2rem;letter-spacing:-.02em}.marca small{font-size:.58rem;letter-spacing:.19em;color:#d7b5b8;margin-top:.2rem}
+.nav{gap:clamp(.8rem,1.7vw,1.6rem)}.nav a:not(.btn){display:inline;font-size:.77rem;font-weight:600;letter-spacing:.025em;color:#f1e7e8;opacity:.88;transition:opacity .2s,color .2s}
+.nav a:not(.btn):hover{color:#fff;opacity:1}
+.nav .btn{margin-left:.25rem}
+.menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--gold);border-radius:3px;background:transparent;color:#fff;cursor:pointer}
+.menu-toggle svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round}
+.hero{min-height:min(88svh,820px);background:#24171d}
+.hero::before{background-position:center 30%;transform:scale(1.015)}
+.hero::after{background:linear-gradient(90deg,rgba(35,22,28,.88) 0%,rgba(35,22,28,.66) 43%,rgba(35,22,28,.08) 100%),linear-gradient(0deg,rgba(35,22,28,.8),transparent 38%)}
+.hero .wrap{padding:8rem 0 5rem}
+.hero .txt{max-width:610px}
+.hero .cargo{font-size:.68rem;letter-spacing:.22em;color:#e2b9bd;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(3.5rem,1.5rem + 8vw,7.2rem);line-height:.93;letter-spacing:-.065em;margin-bottom:1.2rem}
+.hero p.sub{font-size:clamp(1.05rem,1rem + .55vw,1.3rem);line-height:1.7;color:#f4e9e9;max-width:43ch;margin-bottom:2rem}
+.cta{gap:.8rem;margin-bottom:1.8rem}.ofertas{gap:.55rem}.ofertas span{font-size:.72rem;font-weight:600;letter-spacing:.025em;padding:.48rem .8rem;border-radius:2px;background:rgba(40,26,32,.38);border-color:rgba(255,255,255,.25)}
+.nota{font-size:.76rem;color:#dfc9cb;max-width:55ch}
+.faixa{background:#21161b;border-top:1px solid rgba(255,255,255,.12)}
+.faixa ul{gap:1.3rem;padding:1.8rem 0}
+.faixa li{font-size:.78rem;font-weight:600;line-height:1.5;color:#f0e5e6}
+.faixa svg{width:23px;height:23px;color:#d5a4aa}
+.papel{background:var(--papel)}
+.cons{gap:clamp(2.5rem,6vw,6rem)}
+.foto{width:min(430px,100%);border-radius:2px;box-shadow:var(--shadow);aspect-ratio:4/5}
+.foto span{padding:3rem 1.5rem 1.2rem;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.cons .cargo2{font-size:.7rem;letter-spacing:.16em;color:#a7656d;margin:1rem 0 1.5rem}
+.cons p{font-size:.98rem;line-height:1.85;color:#6e6266}
+.cons p.destaque{font-size:1.08rem;color:#352930;line-height:1.75}
+.cons p.assina{font:500 1.45rem/1.35 var(--serif);color:var(--ink)!important;border-color:var(--gold);max-width:30ch}
+.pilares{gap:0;margin-top:4.5rem;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.pilar{border:0;border-right:1px solid var(--linha);border-radius:0;padding:2rem 1.6rem;background:transparent}
+.pilar:last-child{border-right:0}.pilar svg{width:29px;height:29px;color:#a7656d;margin-bottom:1.25rem}
+.pilar h3{font-size:1.35rem;margin-bottom:.6rem}.pilar p{font-size:.9rem;line-height:1.75;color:#75696d}
+#simular{background:#f4eeee}
+.simbloco{gap:clamp(2rem,6vw,5rem)}
+.simbloco ul{gap:.85rem;margin-top:1.8rem}.simbloco li{font-size:.92rem;font-weight:600;color:#514349;padding-left:1.9rem}
+.simbloco li::before{border-color:#a7656d}
+.sim{border:1px solid #e7d9db;border-radius:3px;padding:clamp(1.4rem,3vw,2.3rem);box-shadow:0 28px 70px -45px rgba(40,26,32,.4)}
+.sim h3{font-size:1.8rem;letter-spacing:-.04em}.sim>p:not(.aviso):not(.passo){font-size:.88rem}
+.sim input,.sim select{background:#fbf8f7;border:1px solid #e6d9da;border-radius:3px;font-size:.94rem}
+.sim .op span{border-radius:3px;font-size:.93rem}.sim .op input:checked+span{background:#f8eff0}
+.sim .navs .btn.voltar{border-radius:3px}
+.sim .passo{font-size:.66rem;letter-spacing:.16em}
+.sim .aviso{font-size:.8rem}
+.sim .privacidade{font-size:.75rem;color:#807277;line-height:1.6;margin:.9rem 0 0}
+.passos{gap:0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.passos li{border:0;border-right:1px solid var(--linha);border-radius:0;padding:1.8rem 1.5rem;background:transparent}
+.passos li:last-child{border-right:0}.passos li::before{width:2.3rem;height:2.3rem;background:var(--ink);color:#e8c6c9;font-size:1rem}
+.passos h3{font-size:1.28rem;margin-bottom:.55rem}.passos p{font-size:.88rem;line-height:1.75;color:#766a6e}
+.custos{margin-top:2rem;padding:1.2rem 1.5rem;background:#f7f1ef;border-left-color:var(--gold);font-size:.86rem;line-height:1.75}
+#planos{background:#fff}
+.abas{background:#f4eeee;border-radius:3px;padding:.35rem;gap:.3rem;width:max-content;max-width:100%;margin-top:1.8rem}
+.abas button{border-radius:2px;font-size:.8rem;min-height:44px}.abas button[aria-selected="true"]{background:var(--ink);box-shadow:none}
+.selos li{border-radius:2px;font-size:.73rem}.selos li:first-child{background:var(--ink)}
+.tab{border:1px solid var(--linha);border-radius:2px;box-shadow:0 14px 40px -35px #281a20}
+.tab th,.tab td{padding:1rem 1.2rem}.tab th{font-size:.68rem;letter-spacing:.14em;background:#f8f4f2}
+.tab td{font-size:.88rem}.tab td:nth-child(2){font-size:1.35rem;color:var(--ink)}
+.rodape-plano{font-size:.78rem;line-height:1.7;margin-top:1rem}
+#entregas{background:#f5efed}
+.galeria{gap:.9rem}.galeria button{border-radius:2px;box-shadow:none}.galeria button::after{border-radius:2px}
+.btn.escuro{background:var(--ink);border-radius:2px}
+.faq{max-width:850px}.faq details{border-color:#e8dedf}
+.faq summary{font-size:.92rem;font-weight:700;padding:1.35rem 0;letter-spacing:-.01em}.faq summary::after{font-size:1.5rem;color:#a7656d}
+.faq details p{font-size:.88rem;line-height:1.8;color:#75696d}
+.contato{background:#281a20;position:relative;overflow:hidden}
+.contato::before{content:"PB";position:absolute;right:-.04em;bottom:-.38em;font:600 clamp(15rem,34vw,36rem)/.8 var(--serif);color:rgba(255,255,255,.025);pointer-events:none}
+.contato .wrap{position:relative;z-index:1}.contato h2{max-width:13ch}.contato .lead{font-size:.98rem;color:#d8c2c5}
+.cartao{border-radius:2px;border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.035);padding:1.8rem}
+.cartao h3{font-size:1.6rem}.cartao p,.cartao a{font-size:.86rem}.cartao a{margin-top:.65rem}
+footer{background:#1d1318;padding:2.4rem 0 3rem;font-size:.75rem;line-height:1.8;color:#c5b1b5}
+footer .wrap{gap:.75rem}footer b{letter-spacing:.02em}
+.social-fabs{position:fixed;right:1.25rem;bottom:calc(1.25rem + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:.7rem;align-items:flex-end}
+.fab{position:relative;inset:auto;display:flex;align-items:center;justify-content:center;gap:.65rem;width:auto;min-width:56px;height:56px;padding:0 1rem;border:1.5px solid var(--gold);border-radius:999px;color:#fff;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.25),0 0 0 2px rgba(197,164,119,.13);transition:transform .2s,box-shadow .2s,opacity .2s}
+.fab svg{width:23px;height:23px;flex:0 0 23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fab span{font:700 .76rem var(--sans);letter-spacing:.025em;white-space:nowrap}
+.fab.whatsapp{background:#207a59}.fab.instagram{background:#6b3b51}
+.fab:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.3),0 0 0 3px rgba(197,164,119,.2)}
+.fab.some{transform:translateY(12px) scale(.92);opacity:0;pointer-events:none}
+@media(max-width:520px){.social-fabs{right:.8rem;bottom:calc(.8rem + env(safe-area-inset-bottom,0px));gap:.55rem}.fab{height:50px;min-width:50px;padding:0 .85rem}.fab span{font-size:.7rem}}
+@media(min-width:900px){.hero::before{left:28%;background-position:center 32%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 32%);mask-image:linear-gradient(90deg,transparent 0,#000 32%)}.hero::after{background:linear-gradient(90deg,rgba(35,22,28,.94) 0%,rgba(35,22,28,.73) 40%,rgba(35,22,28,.02) 100%),linear-gradient(0deg,rgba(35,22,28,.5),transparent 28%)} }
+@media(max-width:899px){
+  .wrap{width:min(100% - 2rem,700px)}
+  .barra{min-height:70px}.menu-toggle{display:flex}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;padding:1rem 1.2rem 1.35rem;background:#281a20;border-top:1px solid rgba(255,255,255,.12);box-shadow:0 20px 30px -24px #000;align-items:stretch;gap:.15rem;flex-direction:column}
+  .nav.aberto{display:flex}.nav a:not(.btn){display:block;padding:.8rem .3rem;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav .btn{margin:.7rem 0 0}.hero{min-height:82svh}.hero::before{background-position:62% center}.hero::after{background:linear-gradient(0deg,rgba(35,22,28,.96) 0%,rgba(35,22,28,.68) 48%,rgba(35,22,28,.15) 100%)}
+  .hero .wrap{padding:12rem 0 3rem}.hero .txt{max-width:540px}.hero h1{font-size:clamp(3.4rem,14vw,5.6rem)}
+  .pilares{grid-template-columns:1fr;margin-top:3rem}.pilar{border-right:0;border-bottom:1px solid var(--linha);padding:1.6rem .2rem}.pilar:last-child{border-bottom:0}
+  .passos{grid-template-columns:repeat(2,1fr)}.passos li{border-bottom:1px solid var(--linha)}.passos li:nth-child(2){border-right:0}.passos li:nth-child(3),.passos li:nth-child(4){border-bottom:0}
+  .cgrid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  body{font-size:15px}.wrap{width:min(100% - 1.5rem,480px)}section{padding:4rem 0}
+  .hero{min-height:790px;min-height:88svh}.hero .wrap{padding:11rem 0 2.6rem}.hero h1{font-size:clamp(3.2rem,15vw,4.8rem)}.hero p.sub{font-size:1rem}.cta{display:grid;grid-template-columns:1fr}.cta .btn{width:100%}.ofertas span{font-size:.65rem}
+  .faixa ul{grid-template-columns:1fr 1fr;gap:1.1rem}.faixa li{font-size:.7rem;align-items:flex-start}.faixa svg{width:20px;height:20px}
+  .foto{width:100%;max-width:360px}.sim{padding:1.2rem}.sim .navs{gap:.45rem}.sim .navs .btn{padding:.8rem .6rem;font-size:.8rem}
+  .passos{grid-template-columns:1fr}.passos li{border-right:0;border-bottom:1px solid var(--linha)!important;padding:1.3rem .2rem}.passos li:last-child{border-bottom:0!important}
+  .abas{width:100%;overflow-x:auto}.abas button{flex:1;padding-inline:.8rem;font-size:.74rem}
+  .tab th,.tab td{padding:.8rem .55rem}.tab th{font-size:.59rem}.tab td{font-size:.76rem}.tab td:nth-child(2){font-size:1.05rem}.tab .btn{min-height:38px;padding:.45rem .6rem;font-size:.7rem}
+  .galeria{gap:.55rem}.cartao{padding:1.3rem}
+}
+@media(prefers-reduced-motion:reduce){.hero::before{transform:none}}
+
 </style>
+<script>document.documentElement.className+=" js";</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Paula Belfort",
+  "jobTitle":"Consultora de Consórcios",
+  "telephone":"+55 98 98545-3809",
+  "sameAs":["https://www.instagram.com/paula_consorcio_00?igsh=aWRjb2ZxY251eGgz&utm_source=qr"]
+}
+</script>
 </head>
 <body>
-  <div class="card">
-    <span class="status">Aguardando Liberação</span>
-    <h1>Projeto em Fase Final</h1>
-    <p>Esta versão de demonstração está temporariamente suspensa aguardando a conclusão do processo de licenciamento e regularização do projeto.</p>
-    <p style="font-size:0.85rem;color:#9fb0c4;">Assim que o procedimento for finalizado, o acesso oficial será restabelecido automaticamente pelo desenvolvedor.</p>
+
+<header>
+  <div class="wrap barra">
+    <a class="marca" href="#topo" aria-label="Paula Belfort, Consultora de Vendas, início">
+      <span><b>Paula Belfort</b><small>Consultora Especializada</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="menuPrincipal" aria-label="Principal">
+      <a href="#sobre">Sobre</a><a href="#como">Como funciona</a><a href="#planos">Planos</a><a href="#entregas">Conquistas</a><a href="#duvidas">Dúvidas</a>
+      <a class="btn peq" href="#simular">Simular</a>
+    </nav>
   </div>
+</header>
+
+<main id="topo">
+  <section class="hero" aria-labelledby="t-hero" style="padding:0">
+    <div class="wrap">
+      <div class="txt">
+        <p class="cargo">Consultoria Especializada em Consórcios</p>
+        <h1 id="t-hero">Paula Belfort</h1>
+        <p class="sub">Planejamento financeiro inteligente para você conquistar seu veículo ou imóvel com total segurança.</p>
+        <div class="cta">
+          <a class="btn" id="zapHero" href="#contato" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          <a class="btn sec" href="#simular">Fazer simulação</a>
+        </div>
+        <div class="ofertas">
+          <span>Planos para Veículos</span>
+          <span>Imóveis e Reformas</span>
+          <span>Sem juros; consulte condições</span>
+        </div>
+        <p class="nota">Condições exclusivas de atendimento personalizado. Consulte as regras do grupo.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="faixa">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Atendimento especializado e transparente</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v9h14v-9M9 19v-5h6v5"/></svg>Grupos regulados e fiscalizados pelo Banco Central</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1-4 4-6 8-6s7 2 8 6"/></svg>Suporte completo da simulação à entrega</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Planos sob medida para o seu orçamento</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="papel" id="sobre" aria-labelledby="t-cons">
+    <div class="wrap">
+      <div class="cons">
+        <div class="foto rev" role="img" aria-label="Paula Belfort, Consultora de Consórcios"><span>Paula Belfort · Consultoria</span></div>
+        <div class="rev">
+          <span class="eyebrow">Quem vai te atender</span>
+          <h2 id="t-cons">Paula Belfort</h2>
+          <p class="cargo2">Consultora de Vendas | Especialista em Consórcios</p>
+          <p class="destaque">Olá! Sou Paula Belfort, profissional dedicada a conectar você aos seus maiores objetivos através de um planejamento financeiro seguro e eficiente.</p>
+          <p>Meu compromisso é oferecer um atendimento humanizado e transparente, entendendo exatamente o seu momento para indicar as melhores opções do mercado de consórcios, seja para a aquisição de veículos ou imóveis.</p>
+          <p>Acredito que realizar sonhos exige estratégia, clareza e confiança. Trabalho lado a lado com cada cliente para desmistificar o consórcio e transformar metas em conquistas reais.</p>
+          <p class="assina">Planejamento, credibilidade e o caminho seguro para as suas conquistas.</p>
+        </div>
+      </div>
+
+      <div class="pilares">
+        <div class="pilar rev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3>Planejamento sob medida</h3><p>Analisamos juntos a parcela ideal para caber perfeitamente no seu orçamento mensal.</p></div>
+        <div class="pilar rev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><h3>Transparência total</h3><p>Explicação clara sobre taxas, prazos, regras de lances e assembleias.</p></div>
+        <div class="pilar rev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/></svg><h3>Acompanhamento exclusivo</h3><p>Suporte dedicado desde a escolha do grupo até a contemplação e entrega do bem.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="simular" aria-labelledby="t-sim">
+    <div class="wrap simbloco">
+      <div class="rev">
+        <span class="eyebrow">Simulação sem compromisso</span>
+        <h2 id="t-sim">Vamos planejar sua conquista?</h2>
+        <p class="lead" style="margin-bottom:0">Responda algumas perguntas rápidas e eu entrarei em contato pessoalmente com uma proposta personalizada.</p>
+        <ul>
+          <li>Opções para carros, motos e imóveis</li>
+          <li>Parcelas ajustadas ao seu bolso</li>
+          <li>Orientação completa sobre lances e prazos</li>
+        </ul>
+      </div>
+      <form class="sim rev" id="form" novalidate>
+        <h3>Faça sua simulação</h3>
+        <div class="prog" aria-hidden="true"><i id="progBar"></i></div>
+        <p class="passo" id="passoTxt" aria-live="polite"></p>
+        <div id="etapa"></div>
+        <p class="privacidade">Ao enviar, você abrirá uma conversa no WhatsApp da Paula com as respostas informadas. Nenhum cadastro é armazenado neste site.</p>
+        <p class="aviso" id="aviso" role="status"></p>
+        <div class="navs">
+          <button class="btn voltar" type="button" id="voltar" hidden>Voltar</button>
+          <button class="btn" type="submit" id="avancar">Continuar</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="papel" id="como" aria-labelledby="t-como">
+    <div class="wrap">
+      <h2 id="t-como" class="rev">Como funciona o consórcio</h2>
+      <p class="lead rev">Uma forma coletiva de planejar a aquisição de um bem, com parcelas e custos definidos em contrato.</p>
+      <ol class="passos">
+        <li class="rev"><h3>Escolha o crédito</h3><p>Defina o valor do bem e o prazo ideal para o seu planejamento financeiro.</p></li>
+        <li class="rev"><h3>Participe do grupo</h3><p>Você contribui mensalmente com um fundo comum junto aos demais participantes.</p></li>
+        <li class="rev"><h3>Concorra à contemplação</h3><p>Todo mês ocorrem assembleias com sorteios e lances para liberação da carta de crédito.</p></li>
+        <li class="rev"><h3>Realize sua compra</h3><p>Com a carta em mãos, você adquire seu veículo ou imóvel com poder de compra à vista.</p></li>
+      </ol>
+      <p class="custos rev"><b>Investimento sem juros:</b> O consórcio não incide taxa de juros, contando apenas com taxa de administração, fundo de reserva e eventuais correções previstas em contrato.</p>
+    </div>
+  </section>
+
+  <section id="planos" aria-labelledby="t-planos">
+    <div class="wrap">
+      <h2 id="t-planos" class="rev">Planos em Destaque</h2>
+      <p class="lead rev">Confira referências de parcelas e prazos informados para esta página. Confirme disponibilidade, crédito, taxas, reajustes e condições atualizadas diretamente com a Paula antes de qualquer decisão.</p>
+      <div class="abas" role="tablist" aria-label="Modelos" id="abas"></div>
+      <ul class="selos" id="selos" hidden></ul>
+      <table class="tab rev" aria-live="polite"><thead><tr><th>PRAZO</th><th>PARCELA A PARTIR DE</th><th></th></tr></thead><tbody id="linhas"></tbody></table>
+      <p class="rodape-plano" id="rodapePlano">Valores cadastrados como referência e ainda sujeitos à confirmação. Não constituem oferta ou aprovação de crédito; condições, taxas, reajustes, disponibilidade e regras dependem da administradora e do contrato.</p>
+    </div>
+  </section>
+
+  <section class="papel" id="entregas" aria-labelledby="t-ent">
+    <div class="wrap">
+      <span class="eyebrow rev">Galeria de Conquistas</span>
+      <h2 id="t-ent" class="rev">Clientes Realizados</h2>
+      <p class="lead rev">Confira algumas das nossas entregas e premiações. Toque em qualquer foto para ampliar.</p>
+      <div class="galeria" id="galeria"></div>
+      <div class="mais-wrap"><button class="btn escuro" type="button" id="maisFotos" hidden>Ver todas as fotos</button></div>
+    </div>
+  </section>
+
+  <section id="duvidas" aria-labelledby="t-faq">
+    <div class="wrap faq">
+      <h2 id="t-faq" class="rev">Dúvidas frequentes</h2>
+      <details><summary>Qual a diferença entre consórcio e financiamento?</summary><p>No financiamento, a instituição libera o crédito conforme a análise e cobra juros. No consórcio, os participantes formam um grupo e contribuem mensalmente; a contemplação ocorre por sorteio ou lance, conforme o contrato. Não há juros, mas existem taxa de administração e outros encargos previstos.</p></details>
+      <details><summary>O consórcio cobra juros?</summary><p>Não há cobrança de juros. Existe apenas a taxa de administração da gestora e o fundo de reserva, além de correções periódicas do valor do crédito.</p></details>
+      <details><summary>Como posso ser contemplado mais rápido?</summary><p>Você pode ser contemplado por sorteio mensalmente ou ofertar lances (valor antecipado) para acelerar a liberação da sua carta de crédito.</p></details>
+      <details><summary>Posso usar meu FGTS no consórcio imobiliário?</summary><p>Em determinadas modalidades de consórcio imobiliário, o FGTS pode ser utilizado conforme as regras vigentes do Conselho Curador do FGTS e da Caixa. A possibilidade depende do imóvel, do trabalhador e da operação; confirme antes de contratar.</p></details>
+      <details><summary>O consórcio é seguro?</summary><p>Consórcios devem ser administrados por empresas autorizadas pelo Banco Central. Antes de aderir, confira a administradora, o contrato, as taxas e as regras do grupo.</p></details>
+    </div>
+  </section>
+
+  <section class="contato" id="contato" aria-labelledby="t-cont">
+    <div class="wrap cgrid">
+      <div class="rev">
+        <h2 id="t-cont">Pronta para realizar o seu próximo grande objetivo?</h2>
+        <p class="lead">Fale diretamente com a Paula Belfort e tire todas as suas dúvidas sem compromisso.</p>
+        <a class="btn" id="zapContato" href="#contato" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+      <div class="rev" style="display:grid;gap:1rem">
+        <div class="cartao">
+          <h3>Paula Belfort</h3>
+          <p>Consultora Especializada em Consórcios</p>
+          <a id="zapNum" href="#contato" target="_blank" rel="noopener">(98) 98545-3809</a>
+          <a href="https://www.instagram.com/paula_consorcio_00?igsh=aWRjb2ZxY251eGgz&utm_source=qr" target="_blank" rel="noopener noreferrer">@paula_consorcio_00</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Paula Belfort · Consultoria em Consórcios</b> · Atendimento especializado com foco em soluções financeiras sob medida.</p>
+    <p>O consórcio é regulamentado e fiscalizado pelo Banco Central do Brasil. Contemplações sujeitas às regras de sorteio e lance das assembleias.</p>
+    <p>© <span id="ano"></span> Paula Belfort. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="social-fabs" aria-label="Acesso rápido às redes sociais">
+  <a class="fab instagram" id="fabInstagram" href="https://www.instagram.com/paula_consorcio_00?igsh=aWRjb2ZxY251eGgz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Acessar Instagram da Paula" title="Instagram da Paula">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+    <span>Instagram</span>
+  </a>
+  <a class="fab whatsapp" id="fab" href="#contato" target="_blank" rel="noopener" aria-label="Falar com Paula pelo WhatsApp" title="WhatsApp da Paula">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.9a8.2 8.2 0 1 1 16-3.4Z"/><path d="M8.5 8.2c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.6 2.1 2.1.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.3.3.5 0 .4-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-1.1-.2-2.5-.8-3.9-2.1-1.1-1-2-2.4-2.2-3.4-.2-.9.2-1.7.8-2.3Z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<dialog id="lb" aria-label="Foto ampliada"><img id="lbImg" alt=""><div class="lb-rod"><button type="button" id="lbPrev" aria-label="Foto anterior">&#8249;</button><div class="info"><span id="lbCap"></span><small id="lbNum"></small></div><button type="button" id="lbNext" aria-label="Próxima foto">&#8250;</button><button type="button" id="lbX" aria-label="Fechar">&#10005;</button></div></dialog>
+
+<script>
+var CFG = {
+  whatsapp: "5598985453809", // WhatsApp atualizado da Paula
+  atualizadoEm: "nov/2026"
+};
+
+var PLANOS = [
+  {aba:"Automóveis 0km", nome:"Plano Automóveis 0km",
+   selos:["Planejamento direto","Condições especiais","Parcelas acessíveis"],
+   linhas:[[100,"730,13"],[90,"803,63"],[80,"1.173,39"],[70,"1.331,29"],[60,"1.541,83"],[50,"1.836,58"],[36,"2.524,33"]]},
+  {aba:"Seminovos", nome:"Plano Veículos Seminovos",
+   selos:["Flexibilidade na escolha","Sem juros"],
+   linhas:[[100,"567,88"],[90,"625,04"],[80,"912,64"],[70,"1.035,45"],[60,"1.199,20"],[50,"1.428,45"],[36,"1.963,36"]]},
+  {aba:"Imóveis", nome:"Plano de Imóveis e Construção",
+   selos:["Construção ou Reforma","Uso de FGTS permitido"],
+   linhas:[[180,"850,00"],[150,"980,00"],[120,"1.250,00"],[90,"1.640,00"],[60,"2.400,00"]]}
+];
+
+// Carregamento automático das fotos c1.jpeg até c44.jpeg
+var FOTOS = [];
+for(var i=1; i<=44; i++){
+  FOTOS.push(["c" + i + ".jpeg", "Conquista Paula Belfort"]);
+}
+var FOTOS_VISIVEIS = 8;
+
+var PERGUNTAS = [
+  {id:"nome", tipo:"texto", rotulo:"Nome", titulo:"Como posso te chamar?", dica:"Só o primeiro nome já ajuda.", ph:"Seu nome", obrig:true, erro:"Por favor, digite seu nome."},
+  {id:"quer", tipo:"opcoes", rotulo:"Quero conquistar", titulo:"O que você deseja conquistar?", opcoes:["Carro 0km","Carro seminovo","Moto","Imóvel / Casa própria","Reforma"]},
+  {id:"parcela", tipo:"opcoes", rotulo:"Parcela ideal", titulo:"Qual valor mensal cabe no seu orçamento?", opcoes:["Até R$ 500","De R$ 500 a R$ 1.000","De R$ 1.000 a R$ 2.000","Mais de R$ 2.000"]},
+  {id:"quando", tipo:"opcoes", rotulo:"Prazo desejado", titulo:"Para quando você planeja essa conquista?", opcoes:["O quanto antes","Em até 1 ano","Mais para frente","Estou apenas pesquisando"]}
+];
+
+(function(){
+var $=function(s){return document.querySelector(s)};
+function zap(m){return "https://wa.me/"+CFG.whatsapp+"?text="+encodeURIComponent(m)}
+var base="Olá, Paula! Vim pelo seu site e gostaria de fazer uma simulação de consórcio.";
+var menuToggle=$("#menuToggle"),menuPrincipal=$("#menuPrincipal");
+if(menuToggle&&menuPrincipal){
+  menuToggle.addEventListener("click",function(){
+    var aberto=menuPrincipal.classList.toggle("aberto");
+    menuToggle.setAttribute("aria-expanded",String(aberto));
+    menuToggle.setAttribute("aria-label",aberto?"Fechar menu":"Abrir menu");
+  });
+  menuPrincipal.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){
+    menuPrincipal.classList.remove("aberto");menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Abrir menu");
+  })});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){menuPrincipal.classList.remove("aberto");menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Abrir menu");menuToggle.focus()}});
+}
+["#zapHero","#zapContato","#zapNum","#fab"].forEach(function(s){$(s).href=zap(base)});
+$("#ano").textContent=new Date().getFullYear();
+
+var R={},passo=0,box=$("#etapa"),btnAv=$("#avancar"),btnVo=$("#voltar"),aviso=$("#aviso");
+function ativos(){return PERGUNTAS.filter(function(p){return !p.so||p.so(R)})}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;")}
+function desenha(foco){
+  var A=ativos(),h,p;
+  aviso.textContent="";
+  $("#progBar").style.width=Math.round(Math.min(passo,A.length)/A.length*100)+"%";
+  btnVo.hidden=passo===0;
+  if(passo>=A.length){
+    h='<div class="resumo"><h4>Tudo certo'+(R.nome?", "+esc(R.nome):"")+'!</h4><p>Confira seus dados e envie para o WhatsApp da Paula.</p><dl>';
+    A.forEach(function(q){if(R[q.id])h+="<dt>"+esc(q.rotulo)+"</dt><dd>"+esc(R[q.id])+"</dd>"});
+    box.innerHTML=h+"</dl></div>";
+    $("#passoTxt").textContent="Última etapa";
+    btnAv.textContent="Enviar pelo WhatsApp";return}
+  p=A[passo];
+  $("#passoTxt").textContent="Pergunta "+(passo+1)+" de "+A.length;
+  btnAv.textContent=passo===A.length-1?"Ver resumo":"Continuar";
+  h="<fieldset><legend>"+esc(p.titulo)+"</legend>"+(p.dica?'<p class="dica">'+esc(p.dica)+"</p>":"");
+  if(p.tipo==="texto"){
+    h+='<input id="resp" type="text" autocomplete="'+(p.id==="nome"?"given-name":"off")+'" placeholder="'+esc(p.ph||"")+'" maxlength="60">'}
+  else{
+    h+='<div class="ops">'+p.opcoes.map(function(o){return '<label class="op"><input type="radio" name="q" value="'+esc(o)+'"'+(R[p.id]===o?" checked":"")+"><span>"+esc(o)+"</span></label>"}).join("")+"</div>"}
+  box.innerHTML=h+"</fieldset>";
+  if(p.tipo==="texto"){var r=$("#resp");r.value=R[p.id]||"";if(foco)r.focus()}
+  else Array.prototype.forEach.call(box.querySelectorAll("input"),function(inp){
+    inp.addEventListener("click",function(e){R[p.id]=inp.value;if(e.detail>0)setTimeout(function(){passo++;desenha(true)},220)})})}
+function avanca(){
+  var A=ativos(),p;
+  if(passo>=A.length){
+    var m="Olá, Paula! Vim pelo seu site e quero fazer uma simulação de consórcio.\n";
+    A.forEach(function(q){if(R[q.id])m+="\n"+q.rotulo+": "+R[q.id]});
+    var destino=zap(m);var nova=window.open(destino,"_blank","noopener,noreferrer");if(!nova)window.location.href=destino;return}
+  p=A[passo];
+  if(p.tipo==="texto"){
+    var v=$("#resp").value.trim();
+    if(p.obrig&&!v){aviso.textContent=p.erro||"Por favor, preencha o campo.";$("#resp").focus();return}
+    R[p.id]=v}
+  else if(!R[p.id]){aviso.textContent="Selecione uma opção para continuar.";return}
+  passo++;desenha(true)}
+$("#form").addEventListener("submit",function(e){e.preventDefault();avanca()});
+btnVo.addEventListener("click",function(){if(passo>0){passo--;desenha(true)}});
+desenha(false);
+
+var abas=$("#abas"),corpo=$("#linhas"),selos=$("#selos"),atual=0;
+function monta(){
+  var p=PLANOS[atual];
+  selos.innerHTML=(p.selos||[]).map(function(s){return "<li>"+s+"</li>"}).join("");
+  selos.hidden=!(p.selos&&p.selos.length);
+  corpo.innerHTML=p.linhas.map(function(l){
+    var msg="Olá, Paula! Vim pelo seu site e quero simular o "+p.nome+" em "+l[0]+"x de R$ "+l[1]+".";
+    return '<tr><td>'+l[0]+' meses</td><td>R$ '+l[1]+'</td><td><a class="btn peq" href="'+zap(msg)+'" target="_blank" rel="noopener" aria-label="Simular '+p.nome+'">Simular</a></td></tr>'}).join("");
+  Array.prototype.forEach.call(abas.children,function(b,i){b.setAttribute("aria-selected",i===atual?"true":"false")})}
+PLANOS.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.textContent=p.aba;
+  b.addEventListener("click",function(){atual=i;monta()});abas.appendChild(b)});
+monta();
+
+var lb=$("#lb"),gal=$("#galeria"),mais=$("#maisFotos"),lista=[],visiveis=FOTOS_VISIVEIS,idx=0;
+function atualiza(){
+  lista.forEach(function(it,i){it.fig.hidden=i>=visiveis});
+  if(lista.length>visiveis){mais.hidden=false;mais.textContent="Ver todas as fotos ("+lista.length+")"}else{mais.hidden=true}}
+FOTOS.forEach(function(f){
+  var fig=document.createElement("figure"),btn=document.createElement("button"),img=new Image(),
+      it={fig:fig,img:img,cap:f[1]};
+  btn.type="button";btn.setAttribute("aria-label","Ampliar foto");
+  img.src=encodeURI(f[0]);img.alt="Conquista Paula Belfort";img.loading="lazy";img.decoding="async";img.width=400;img.height=500;
+  img.addEventListener("error",function(){fig.remove();var k=lista.indexOf(it);if(k>-1)lista.splice(k,1);atualiza()});
+  btn.appendChild(img);fig.appendChild(btn);gal.appendChild(fig);lista.push(it);
+  btn.addEventListener("click",function(){mostra(lista.indexOf(it));if(lb.showModal)lb.showModal();else lb.setAttribute("open","")})});
+atualiza();
+mais.addEventListener("click",function(){visiveis=lista.length;atualiza();mais.hidden=true});
+function mostra(i){
+  if(!lista.length)return;
+  idx=(i+lista.length)%lista.length;var it=lista[idx];
+  $("#lbImg").src=it.img.src;$("#lbImg").alt=it.img.alt;
+  $("#lbCap").textContent=it.cap;$("#lbNum").textContent=(idx+1)+" de "+lista.length}
+function fecha(){if(lb.close)lb.close();else lb.removeAttribute("open")}
+$("#lbX").addEventListener("click",fecha);
+$("#lbPrev").addEventListener("click",function(){mostra(idx-1)});
+$("#lbNext").addEventListener("click",function(){mostra(idx+1)});
+lb.addEventListener("click",function(e){if(e.target===lb)fecha()});
+
+var io="IntersectionObserver" in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("vis");io.unobserve(e.target)}})},{threshold:.12}):null;
+Array.prototype.forEach.call(document.querySelectorAll(".rev"),function(el){io?io.observe(el):el.classList.add("vis")});
+if("IntersectionObserver" in window){var fab=$("#fab");var n=0;
+  var ob=function(){return new IntersectionObserver(function(es){es.forEach(function(e){n+=e.isIntersecting?1:-1});fab.classList.toggle("some",n>0)})};
+  ob().observe($("#simular"));ob().observe($("#contato"))}
+})();
+</script>
 </body>
 </html>
