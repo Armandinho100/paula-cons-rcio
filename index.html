@@ -30,7 +30,7 @@
   --texto:#2b1d21;
   --muda:#6b5358;
   --linha:#ead5d7;
-  --foto:url("paulabelfort.jpeg");
+  --foto:url("paula-moto.jpeg");
   --apresentacao:url("apresentacao.jpeg");
   --serif:"Fraunces",Georgia,serif;
   --sans:"Manrope","Segoe UI",Roboto,sans-serif;
@@ -366,6 +366,21 @@ footer .wrap{gap:.75rem}footer b{letter-spacing:.02em}
   .galeria{gap:.55rem}.cartao{padding:1.3rem}
 }
 @media(prefers-reduced-motion:reduce){.hero::before{transform:none}}
+
+/* FOTO DO TOPO: Paula na moto (retrato vertical 9:16) */
+.hero::before{background-position:center 60%;transform:none}
+@media(min-width:900px){
+  .hero::before{background-position:center 60%}
+}
+@media(max-width:899px){
+  .hero::before{background-position:center 42%}
+}
+@media(max-width:640px){
+  .hero{min-height:0}
+  .hero::before{background-size:100% auto;background-position:center top}
+  .hero::after{background:linear-gradient(180deg,rgba(35,22,28,0) 0,rgba(35,22,28,0) 88vw,rgba(35,22,28,.78) 120vw,#24171d 145vw)}
+  .hero .wrap{padding:122vw 0 2.6rem}
+}
 
 </style>
 <script>document.documentElement.className+=" js";</script>
